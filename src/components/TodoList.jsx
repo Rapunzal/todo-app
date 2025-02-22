@@ -1,16 +1,14 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
-  const [completed, setCompleted] = useState(item.completed);
-  //   console.log(state);
+  //   const [completed, setCompleted] = useState(item.completed);
+
   console.log(item.completed, " completed==");
+
   const handleChange = (id) => {
     setCompleted(!completed);
     console.log(completed);
-    let newItem = { ...item };
-    newItem["completed"] = !newItem["completed"];
-    // let newItem = { ...item, completed: completed };
     dispatch({ payload: id, type: "COMPLETED" });
   };
 
@@ -30,8 +28,8 @@ const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
         <input
           type="checkbox"
           onChange={() => handleChange(item.id)}
-          value={completed}
-          checked={completed}
+          value={item.completed}
+          checked={item.completed}
         />
         {/* <p className={completed ? "line-through px-3" : "px-3"}>{item.title}</p> */}
         <p className={"px-3"}>{item.title}</p>

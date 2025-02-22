@@ -7,7 +7,7 @@ export default function reducer(state, action) {
         {
           title: action.payload,
           completed: false,
-          id: state.length + 1,
+          id: Date.now(),
           userId: 1,
         },
         ...state,
@@ -17,10 +17,13 @@ export default function reducer(state, action) {
     }
     case "COMPLETED": {
       console.log(action.payload, "payload ");
-      let newState = [...state];
-      newState[action.payload - 1].completed =
-        !newState[action.payload - 1].completed;
-      return [...newState];
+      return state.map((todo) => {
+        if (todo.id === action.payload) {
+          return { ...todo, completed: !todo.completed };
+        } else {
+          return todo;
+        }
+      });
     }
 
     default:
