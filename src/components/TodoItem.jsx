@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const TodoItem = ({ dispatch }) => {
-  const [todo, setTodo] = useState("");
+const TodoItem = ({ dispatch, todo, setTodo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
       payload: todo,
       type: "ADD",
     });
+    setTodo("");
   };
   const handleChange = (e) => {
     setTodo(e.target.value);

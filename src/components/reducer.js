@@ -4,7 +4,12 @@ export default function reducer(state, action) {
   switch (action.type) {
     case "ADD":
       return [
-        { title: action.payload, completed: false, id: 1, userId: 1 },
+        {
+          title: action.payload,
+          completed: false,
+          id: state.length + 1,
+          userId: 1,
+        },
         ...state,
       ];
     case "DELETE": {
@@ -12,7 +17,10 @@ export default function reducer(state, action) {
     }
     case "COMPLETED": {
       console.log(action.payload, "payload ");
-      return [...state, action.payload];
+      let newState = [...state];
+      newState[action.payload - 1].completed =
+        !newState[action.payload - 1].completed;
+      return [...newState];
     }
 
     default:
