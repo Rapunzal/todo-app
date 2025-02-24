@@ -12,19 +12,21 @@ function App() {
   return (
     <div>
       <Header />
+      <div className="my-8">
+        <TodoItem dispatch={dispatch} todo={todo} setTodo={setTodo} />
 
-      <TodoItem dispatch={dispatch} todo={todo} setTodo={setTodo} />
-      <div className="flex justify-center  ">
-        <div>
-          {state.map((item) => (
-            <TodoList
-              dispatch={dispatch}
-              item={item}
-              todoList={state}
-              todo={todo}
-              setTodo={setTodo}
-            />
-          ))}
+        <div className="flex justify-center  ">
+          <div>
+            {state.map((item) => (
+              <TodoList
+                dispatch={dispatch}
+                item={item}
+                todoList={state}
+                todo={todo}
+                setTodo={setTodo}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

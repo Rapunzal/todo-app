@@ -1,14 +1,14 @@
 import React from "react";
-// import { useState } from "react";
+import { useState } from "react";
 
 const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
-  //   const [completed, setCompleted] = useState(item.completed);
+  const [input, setInput] = useState("");
 
   console.log(item.completed, " completed==");
 
   const handleChange = (id) => {
-    setCompleted(!completed);
-    console.log(completed);
+    // setCompleted(!completed);
+    //console.log(completed);
     dispatch({ payload: id, type: "COMPLETED" });
   };
 
@@ -20,7 +20,7 @@ const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
 
   const handleEdit = (id) => {
     const t = todoList.find((item) => item.id === id);
-    setTodo(t.title);
+    setInput(t.title);
   };
   return (
     <div className="flex justify-start">
@@ -40,8 +40,9 @@ const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
           Edit
         </button>
         <button
+          disabled={!item.completed}
           onClick={() => handleDelete(item.id)}
-          className="button mx-2 bg-violet-200 px-2 py-1 text-sm rounded  hover:bg-violet-500"
+          className="button mx-2 bg-violet-300 px-2 py-1 text-sm rounded disabled:opacity-40  hover:bg-violet-500"
         >
           Delete
         </button>

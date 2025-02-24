@@ -13,7 +13,7 @@ const TodoItem = ({ dispatch, todo, setTodo }) => {
     setTodo(e.target.value);
   };
   return (
-    <div className="flex justify-center  ">
+    <div className="flex justify-center ">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
