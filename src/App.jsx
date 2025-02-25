@@ -13,12 +13,17 @@ function App() {
     <div>
       <Header />
       <div className="my-8">
+        <div className="flex justify-center">
+          <h1 className="text-2xl">Create Todo List</h1>
+        </div>
+
         <TodoItem dispatch={dispatch} todo={todo} setTodo={setTodo} />
 
-        <div className="flex justify-center  ">
+        <div className="flex justify-center ">
           <div>
             {state.map((item) => (
               <TodoList
+                key={item.id}
                 dispatch={dispatch}
                 item={item}
                 todoList={state}

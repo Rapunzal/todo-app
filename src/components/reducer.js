@@ -12,6 +12,14 @@ export default function reducer(state, action) {
         },
         ...state,
       ];
+    case "EDIT":
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, title: action.payload.todo };
+        } else {
+          return todo;
+        }
+      });
     case "DELETE": {
       return [...action.payload];
     }

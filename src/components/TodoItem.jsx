@@ -17,7 +17,7 @@ const TodoItem = ({ dispatch, todo, setTodo }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          className="border-2 rounded px-16"
+          className="border-2 rounded px-38"
           onChange={handleChange}
           value={todo}
         />
