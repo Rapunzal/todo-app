@@ -1,4 +1,4 @@
-# React + Vite
+# TODO LIST APP
 
 # OBJECTIVE
 
