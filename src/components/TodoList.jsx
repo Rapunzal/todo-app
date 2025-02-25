@@ -40,6 +40,7 @@ const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
         {visible && (
           <>
             <input
+              placeholder="Add Interactivity"
               className="border-2 rounded px-16 mx-3"
               type="text"
               value={input}

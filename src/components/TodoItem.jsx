@@ -16,6 +16,7 @@ const TodoItem = ({ dispatch, todo, setTodo }) => {
     <div className="flex justify-center ">
       <form onSubmit={handleSubmit}>
         <input
+          placeholder="Add Task"
           type="text"
           className="border-2 rounded px-38"
           onChange={handleChange}
