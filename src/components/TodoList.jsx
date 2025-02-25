@@ -6,14 +6,11 @@ const TodoList = ({ dispatch, item, todoList, todo, setTodo }) => {
   const [visible, setIsVisible] = useState(false);
 
   const handleChange = (id) => {
-    // setCompleted(!completed);
-    //console.log(completed);
     dispatch({ payload: id, type: "COMPLETED" });
   };
 
   const handleDelete = (id) => {
     const newTodos = todoList.filter((item) => item.id !== id);
-    console.log(newTodos, " in delete");
     dispatch({ payload: newTodos, type: "DELETE" });
   };
 
