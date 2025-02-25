@@ -1,6 +1,6 @@
 # TODO LIST APP
 
-# OBJECTIVE
+## OBJECTIVE
 
 A to-do list application can be built using React, managing tasks through state and reducer hooks and rendering them dynamically.Lets users add new tasks and delete existing tasks, edit tasks, checking and unchecking items to mark them as complete or incomplete.
 
